@@ -28,5 +28,9 @@ Pod::Spec.new do |s|
             imageGradientView.source_files = 'CRAnimation/CRWidget/CRImageGradientView/*'
         end
 
+        widget.subspec 'CRCardAnimationView' do |cardAnimationView|
+            cardAnimationView.source_files = 'CRAnimation/CRWidget/CRCardAnimationView/*'
+        end
+
     end
 end
