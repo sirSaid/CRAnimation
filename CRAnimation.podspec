@@ -21,6 +21,8 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/BearRan/CRAnimation.git', :tag => s.version.to_s }
     s.ios.deployment_target = '7.0'
     s.frameworks = 'UIKit'
+    s.dependency 'BearSkill'
+    s.prefix_header_file = 'CRAnimation/CRPCH/CRPrefixHeader.pch'
 
     s.subspec 'Widget' do |widget|
 
