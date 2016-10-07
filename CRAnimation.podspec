@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
 
     s.subspec 'Widget' do |widget|
 
-        widget.subspec 'ImageGradientView' do |imageGradientView|
-            imageGradientView.source_files = 'CRAnimation/Widget/ImageGradientView/*'
+        widget.subspec 'CRImageGradientView' do |imageGradientView|
+            imageGradientView.source_files = 'CRAnimation/CRWidget/CRImageGradientView/*'
         end
 
     end
