@@ -6,6 +6,6 @@ target 'CRAnimation_Example' do
   target 'CRAnimation_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+    #pod 'FBSnapshotTestCase'
   end
 end
