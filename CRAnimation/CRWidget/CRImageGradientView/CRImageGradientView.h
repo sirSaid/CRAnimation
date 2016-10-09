@@ -10,7 +10,7 @@
 
 @interface CRImageGradientView : UIView
 
-@property (assign, nonatomic) CGFloat   animationDuration_EX;
-@property (strong, nonatomic) NSString  *nextImageName;
+@property (assign, nonatomic) CGFloat   animationDuration_EX;   //切换动效所需时间
+@property (strong, nonatomic) NSString  *nextImageName;         //下一张图片名称
 
 @end
