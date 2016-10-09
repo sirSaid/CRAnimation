@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */; };
 		366BCD0EA1948D6414619360 /* Pods_CRAnimation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		01463020E65BA8AF1C4FB5E1 /* CRAnimation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRAnimation.podspec; path = ../CRAnimation.podspec; sourceTree = "<group>"; };
 		02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRAnimation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09D1963A1DA78B4900325CF1 /* CRDemoInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRDemoInfoModel.h; sourceTree = "<group>"; };
+		09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRDemoInfoModel.m; sourceTree = "<group>"; };
 		0EE5779AF28D42163CC3E896 /* Pods-CRAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRAnimation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRAnimation_Example/Pods-CRAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1C7FE269E5E0C0765014CB0A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		59F56DF0F33F6C42324864D8 /* Pods_CRAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRAnimation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +96,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D196361DA788C000325CF1 /* WidgetDemo */ = {
+			isa = PBXGroup;
+			children = (
+				09D196371DA788C000325CF1 /* CRCardAnimationViewDemo */,
+				09D196381DA788C000325CF1 /* CRImageGradientViewDemo */,
+			);
+			path = WidgetDemo;
+			sourceTree = "<group>";
+		};
+		09D196371DA788C000325CF1 /* CRCardAnimationViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CRCardAnimationViewDemo;
+			sourceTree = "<group>";
+		};
+		09D196381DA788C000325CF1 /* CRImageGradientViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CRImageGradientViewDemo;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +161,9 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CRViewController.h */,
 				6003F5A6195388D20070C39A /* CRViewController.m */,
+				09D1963A1DA78B4900325CF1 /* CRDemoInfoModel.h */,
+				09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */,
+				09D196361DA788C000325CF1 /* WidgetDemo */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -393,6 +422,7 @@
 				6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CRViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
