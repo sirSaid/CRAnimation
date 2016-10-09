@@ -61,6 +61,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
         demoInfoModel.demoName = @"音乐切换动效";
         demoInfoModel.demoSummary = @"CRCardAnimationView和CRImageGradientView的组合动效";
+        demoInfoModel.demoVCName = @"CRMusicCardDemoVC";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoCombination];
     }
 }

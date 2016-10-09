@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		092003151DAA9B63008266B8 /* CRBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003141DAA9B63008266B8 /* CRBaseNavigationViewController.m */; };
+		0920032D1DAAA1A6008266B8 /* CRDemoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0920032C1DAAA1A6008266B8 /* CRDemoInfoModel.m */; };
+		092003401DAAA20B008266B8 /* CRBottomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003321DAAA20B008266B8 /* CRBottomPageView.m */; };
+		092003411DAAA20B008266B8 /* CRCardViewBack.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003341DAAA20B008266B8 /* CRCardViewBack.m */; };
+		092003421DAAA20B008266B8 /* CRCardViewFront.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003361DAAA20B008266B8 /* CRCardViewFront.m */; };
+		092003431DAAA20B008266B8 /* CRMusicCardDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003381DAAA20B008266B8 /* CRMusicCardDemoVC.m */; };
+		092003441DAAA20B008266B8 /* CRMyCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0920033A1DAAA20B008266B8 /* CRMyCardView.m */; };
+		092003451DAAA20B008266B8 /* CRImageGradientDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0920033F1DAAA20B008266B8 /* CRImageGradientDemoVC.m */; };
 		0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B46C1DA9C6790012F962 /* CRBaseViewController.m */; };
-		0993B4731DA9C72C0012F962 /* CRImageGradientDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */; };
-		09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */; };
 		366BCD0EA1948D6414619360 /* Pods_CRAnimation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -44,12 +49,22 @@
 		02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRAnimation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		092003131DAA9B63008266B8 /* CRBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseNavigationViewController.h; sourceTree = "<group>"; };
 		092003141DAA9B63008266B8 /* CRBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseNavigationViewController.m; sourceTree = "<group>"; };
+		0920032B1DAAA1A6008266B8 /* CRDemoInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRDemoInfoModel.h; sourceTree = "<group>"; };
+		0920032C1DAAA1A6008266B8 /* CRDemoInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRDemoInfoModel.m; sourceTree = "<group>"; };
+		092003311DAAA20B008266B8 /* CRBottomPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBottomPageView.h; sourceTree = "<group>"; };
+		092003321DAAA20B008266B8 /* CRBottomPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBottomPageView.m; sourceTree = "<group>"; };
+		092003331DAAA20B008266B8 /* CRCardViewBack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRCardViewBack.h; sourceTree = "<group>"; };
+		092003341DAAA20B008266B8 /* CRCardViewBack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRCardViewBack.m; sourceTree = "<group>"; };
+		092003351DAAA20B008266B8 /* CRCardViewFront.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRCardViewFront.h; sourceTree = "<group>"; };
+		092003361DAAA20B008266B8 /* CRCardViewFront.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRCardViewFront.m; sourceTree = "<group>"; };
+		092003371DAAA20B008266B8 /* CRMusicCardDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMusicCardDemoVC.h; sourceTree = "<group>"; };
+		092003381DAAA20B008266B8 /* CRMusicCardDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMusicCardDemoVC.m; sourceTree = "<group>"; };
+		092003391DAAA20B008266B8 /* CRMyCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMyCardView.h; sourceTree = "<group>"; };
+		0920033A1DAAA20B008266B8 /* CRMyCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMyCardView.m; sourceTree = "<group>"; };
+		0920033E1DAAA20B008266B8 /* CRImageGradientDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRImageGradientDemoVC.h; sourceTree = "<group>"; };
+		0920033F1DAAA20B008266B8 /* CRImageGradientDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRImageGradientDemoVC.m; sourceTree = "<group>"; };
 		0993B46B1DA9C6790012F962 /* CRBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseViewController.h; sourceTree = "<group>"; };
 		0993B46C1DA9C6790012F962 /* CRBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseViewController.m; sourceTree = "<group>"; };
-		0993B4711DA9C72C0012F962 /* CRImageGradientDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRImageGradientDemoVC.h; sourceTree = "<group>"; };
-		0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRImageGradientDemoVC.m; sourceTree = "<group>"; };
-		09D1963A1DA78B4900325CF1 /* CRDemoInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRDemoInfoModel.h; sourceTree = "<group>"; };
-		09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRDemoInfoModel.m; sourceTree = "<group>"; };
 		0EE5779AF28D42163CC3E896 /* Pods-CRAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRAnimation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRAnimation_Example/Pods-CRAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1C7FE269E5E0C0765014CB0A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		59F56DF0F33F6C42324864D8 /* Pods_CRAnimation_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRAnimation_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +120,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0920032A1DAAA197008266B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0920032B1DAAA1A6008266B8 /* CRDemoInfoModel.h */,
+				0920032C1DAAA1A6008266B8 /* CRDemoInfoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0920032E1DAAA20B008266B8 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				0920033B1DAAA20B008266B8 /* WidgetDemo */,
+				0920032F1DAAA20B008266B8 /* MixDemo */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		0920032F1DAAA20B008266B8 /* MixDemo */ = {
+			isa = PBXGroup;
+			children = (
+				092003301DAAA20B008266B8 /* CRMusicCardDemo */,
+			);
+			path = MixDemo;
+			sourceTree = "<group>";
+		};
+		092003301DAAA20B008266B8 /* CRMusicCardDemo */ = {
+			isa = PBXGroup;
+			children = (
+				092003371DAAA20B008266B8 /* CRMusicCardDemoVC.h */,
+				092003381DAAA20B008266B8 /* CRMusicCardDemoVC.m */,
+				092003311DAAA20B008266B8 /* CRBottomPageView.h */,
+				092003321DAAA20B008266B8 /* CRBottomPageView.m */,
+				092003331DAAA20B008266B8 /* CRCardViewBack.h */,
+				092003341DAAA20B008266B8 /* CRCardViewBack.m */,
+				092003351DAAA20B008266B8 /* CRCardViewFront.h */,
+				092003361DAAA20B008266B8 /* CRCardViewFront.m */,
+				092003391DAAA20B008266B8 /* CRMyCardView.h */,
+				0920033A1DAAA20B008266B8 /* CRMyCardView.m */,
+			);
+			path = CRMusicCardDemo;
+			sourceTree = "<group>";
+		};
+		0920033B1DAAA20B008266B8 /* WidgetDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0920033C1DAAA20B008266B8 /* CRCardAnimationViewDemo */,
+				0920033D1DAAA20B008266B8 /* CRImageGradientViewDemo */,
+			);
+			path = WidgetDemo;
+			sourceTree = "<group>";
+		};
+		0920033C1DAAA20B008266B8 /* CRCardAnimationViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CRCardAnimationViewDemo;
+			sourceTree = "<group>";
+		};
+		0920033D1DAAA20B008266B8 /* CRImageGradientViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0920033E1DAAA20B008266B8 /* CRImageGradientDemoVC.h */,
+				0920033F1DAAA20B008266B8 /* CRImageGradientDemoVC.m */,
+			);
+			path = CRImageGradientViewDemo;
+			sourceTree = "<group>";
+		};
 		0993B46A1DA9C6650012F962 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,31 +197,6 @@
 				092003141DAA9B63008266B8 /* CRBaseNavigationViewController.m */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		09D196361DA788C000325CF1 /* WidgetDemo */ = {
-			isa = PBXGroup;
-			children = (
-				09D196371DA788C000325CF1 /* CRCardAnimationViewDemo */,
-				09D196381DA788C000325CF1 /* CRImageGradientViewDemo */,
-			);
-			path = WidgetDemo;
-			sourceTree = "<group>";
-		};
-		09D196371DA788C000325CF1 /* CRCardAnimationViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CRCardAnimationViewDemo;
-			sourceTree = "<group>";
-		};
-		09D196381DA788C000325CF1 /* CRImageGradientViewDemo */ = {
-			isa = PBXGroup;
-			children = (
-				0993B4711DA9C72C0012F962 /* CRImageGradientDemoVC.h */,
-				0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */,
-			);
-			path = CRImageGradientViewDemo;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -180,13 +238,11 @@
 			children = (
 				6003F59C195388D20070C39A /* CRAppDelegate.h */,
 				6003F59D195388D20070C39A /* CRAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* CRViewController.h */,
 				6003F5A6195388D20070C39A /* CRViewController.m */,
-				09D1963A1DA78B4900325CF1 /* CRDemoInfoModel.h */,
-				09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */,
+				0920032A1DAAA197008266B8 /* Model */,
 				0993B46A1DA9C6650012F962 /* Base */,
-				09D196361DA788C000325CF1 /* WidgetDemo */,
+				0920032E1DAAA20B008266B8 /* Demo */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -197,6 +253,7 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F595195388D20070C39A /* CRAnimation-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
@@ -448,11 +505,16 @@
 			files = (
 				6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* CRViewController.m in Sources */,
+				092003441DAAA20B008266B8 /* CRMyCardView.m in Sources */,
+				0920032D1DAAA1A6008266B8 /* CRDemoInfoModel.m in Sources */,
+				092003421DAAA20B008266B8 /* CRCardViewFront.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */,
 				092003151DAA9B63008266B8 /* CRBaseNavigationViewController.m in Sources */,
-				0993B4731DA9C72C0012F962 /* CRImageGradientDemoVC.m in Sources */,
 				0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */,
+				092003401DAAA20B008266B8 /* CRBottomPageView.m in Sources */,
+				092003431DAAA20B008266B8 /* CRMusicCardDemoVC.m in Sources */,
+				092003451DAAA20B008266B8 /* CRImageGradientDemoVC.m in Sources */,
+				092003411DAAA20B008266B8 /* CRCardViewBack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
