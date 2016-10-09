@@ -138,7 +138,25 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         [self.navigationController pushViewController:destinationVC animated:YES];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, 30)];
     
+    UILabel *titleLable = [[UILabel alloc] init];
+    titleLable.text = _dataArrayTitle[section];
+    titleLable.font = [UIFont systemFontOfSize:14];
+    [titleLable sizeToFit];
+    [titleView addSubview:titleLable];
+    [titleLable BearSetRelativeLayoutWithDirection:kDIR_LEFT destinationView:nil parentRelation:YES distance:15 center:YES];
+    
+    return titleView;
+}
 
 - (void)didReceiveMemoryWarning
 {
