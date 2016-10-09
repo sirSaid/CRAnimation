@@ -6,8 +6,8 @@
 //  Copyright (c) 2016 BearRan. All rights reserved.
 //
 
-@import UIKit;
+#import "CRBaseViewController.h"
 
-@interface CRViewController : UIViewController
+@interface CRViewController : CRBaseViewController
 
 @end

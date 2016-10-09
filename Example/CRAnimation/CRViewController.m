@@ -31,6 +31,11 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     [self createUI];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+}
+
 - (void)dataReady
 {
     //  动效仓库
@@ -46,6 +51,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
         demoInfoModel.demoName = @"CRImageGradientView";
         demoInfoModel.demoSummary = @"ImageView过渡切换动效";
+        demoInfoModel.demoVCName = @"CRImageGradientDemoVC";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -89,8 +95,6 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 - (void)createUI
 {
-    
-    
     _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
     _mainTableView.delegate = self;
     _mainTableView.dataSource = self;
@@ -124,6 +128,17 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CRDemoInfoModel *demoInfoModel = _dataArrayDemoModel[indexPath.section][indexPath.row];
+    
+    if (demoInfoModel.demoVCName) {
+        CRBaseViewController *destinationVC = [[NSClassFromString(demoInfoModel.demoVCName) alloc] init];
+        [self.navigationController pushViewController:destinationVC animated:YES];
+    }
+}
+    
 
 - (void)didReceiveMemoryWarning
 {

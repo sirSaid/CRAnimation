@@ -2,8 +2,7 @@ use_frameworks!
 
 target 'CRAnimation_Example' do
   pod 'CRAnimation', :path => '../'
-  pod 'MJExtension', '3.0.13'
-
+  
   target 'CRAnimation_Tests' do
     inherit! :search_paths
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B46C1DA9C6790012F962 /* CRBaseViewController.m */; };
+		0993B4731DA9C72C0012F962 /* CRImageGradientDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */; };
 		09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */; };
 		366BCD0EA1948D6414619360 /* Pods_CRAnimation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -39,6 +41,10 @@
 /* Begin PBXFileReference section */
 		01463020E65BA8AF1C4FB5E1 /* CRAnimation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRAnimation.podspec; path = ../CRAnimation.podspec; sourceTree = "<group>"; };
 		02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRAnimation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0993B46B1DA9C6790012F962 /* CRBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseViewController.h; sourceTree = "<group>"; };
+		0993B46C1DA9C6790012F962 /* CRBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseViewController.m; sourceTree = "<group>"; };
+		0993B4711DA9C72C0012F962 /* CRImageGradientDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRImageGradientDemoVC.h; sourceTree = "<group>"; };
+		0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRImageGradientDemoVC.m; sourceTree = "<group>"; };
 		09D1963A1DA78B4900325CF1 /* CRDemoInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRDemoInfoModel.h; sourceTree = "<group>"; };
 		09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRDemoInfoModel.m; sourceTree = "<group>"; };
 		0EE5779AF28D42163CC3E896 /* Pods-CRAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRAnimation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRAnimation_Example/Pods-CRAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0993B46A1DA9C6650012F962 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0993B46B1DA9C6790012F962 /* CRBaseViewController.h */,
+				0993B46C1DA9C6790012F962 /* CRBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		09D196361DA788C000325CF1 /* WidgetDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +130,8 @@
 		09D196381DA788C000325CF1 /* CRImageGradientViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0993B4711DA9C72C0012F962 /* CRImageGradientDemoVC.h */,
+				0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */,
 			);
 			path = CRImageGradientViewDemo;
 			sourceTree = "<group>";
@@ -163,6 +180,7 @@
 				6003F5A6195388D20070C39A /* CRViewController.m */,
 				09D1963A1DA78B4900325CF1 /* CRDemoInfoModel.h */,
 				09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */,
+				0993B46A1DA9C6650012F962 /* Base */,
 				09D196361DA788C000325CF1 /* WidgetDemo */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -423,6 +441,8 @@
 				6003F5A7195388D20070C39A /* CRViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */,
+				0993B4731DA9C72C0012F962 /* CRImageGradientDemoVC.m in Sources */,
+				0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
