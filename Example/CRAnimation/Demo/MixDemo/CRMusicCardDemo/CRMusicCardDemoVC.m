@@ -32,6 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self createUI];
+    [self addTopBar];
+}
+
+- (void)createUI
+{
     _imageArray = @[@"TestImage_1",
                     @"TestImage_2",
                     @"TestImage_3",
@@ -163,7 +169,6 @@
     _bottomPageView.pageNow = 0;
     [self.view insertSubview:_bottomPageView belowSubview:_cardAnimationView];
     [_bottomPageView setMaxY:HEIGHT - 30];
-    
 }
 
 

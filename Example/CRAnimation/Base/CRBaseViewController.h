@@ -10,4 +10,9 @@
 
 @interface CRBaseViewController : UIViewController
 
+- (void)createUI;
+
+- (void)addTopBar;
+- (void)popSelf;
+
 @end

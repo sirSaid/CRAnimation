@@ -26,9 +26,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"CRImageGradientDemo";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    [self createUI];
+    [self addTopBar];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self start];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self stop];
+}
+
+- (void)createUI
+{
     _indexNow = -1;
     _imageNameArray = @[@"TestImage_1",
                         @"TestImage_2",
@@ -54,21 +73,6 @@
     [self.view addSubview:_imageGradientView];
     
     [self createTimer];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
-    
-    [self start];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    
-    [self stop];
 }
 
 - (NSString *)getNextImageName
