@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092003151DAA9B63008266B8 /* CRBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003141DAA9B63008266B8 /* CRBaseNavigationViewController.m */; };
 		0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B46C1DA9C6790012F962 /* CRBaseViewController.m */; };
 		0993B4731DA9C72C0012F962 /* CRImageGradientDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B4721DA9C72C0012F962 /* CRImageGradientDemoVC.m */; };
 		09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D1963B1DA78B4900325CF1 /* CRDemoInfoModel.m */; };
@@ -41,6 +42,8 @@
 /* Begin PBXFileReference section */
 		01463020E65BA8AF1C4FB5E1 /* CRAnimation.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CRAnimation.podspec; path = ../CRAnimation.podspec; sourceTree = "<group>"; };
 		02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRAnimation_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		092003131DAA9B63008266B8 /* CRBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseNavigationViewController.h; sourceTree = "<group>"; };
+		092003141DAA9B63008266B8 /* CRBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseNavigationViewController.m; sourceTree = "<group>"; };
 		0993B46B1DA9C6790012F962 /* CRBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseViewController.h; sourceTree = "<group>"; };
 		0993B46C1DA9C6790012F962 /* CRBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseViewController.m; sourceTree = "<group>"; };
 		0993B4711DA9C72C0012F962 /* CRImageGradientDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRImageGradientDemoVC.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 			children = (
 				0993B46B1DA9C6790012F962 /* CRBaseViewController.h */,
 				0993B46C1DA9C6790012F962 /* CRBaseViewController.m */,
+				092003131DAA9B63008266B8 /* CRBaseNavigationViewController.h */,
+				092003141DAA9B63008266B8 /* CRBaseNavigationViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -294,6 +299,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = BearRan;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 28R7P5U993;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -441,6 +450,7 @@
 				6003F5A7195388D20070C39A /* CRViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				09D1963C1DA78B4900325CF1 /* CRDemoInfoModel.m in Sources */,
+				092003151DAA9B63008266B8 /* CRBaseNavigationViewController.m in Sources */,
 				0993B4731DA9C72C0012F962 /* CRImageGradientDemoVC.m in Sources */,
 				0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */,
 			);
@@ -563,13 +573,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 28R7P5U993;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRAnimation/CRAnimation-Prefix.pch";
 				INFOPLIST_FILE = "CRAnimation/CRAnimation-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crossStreet.forDevelopment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5e9bbe3d-49b2-4e92-a35c-a5a01f123110";
+				PROVISIONING_PROFILE_SPECIFIER = CorssStreet_dev_03;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -580,12 +593,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CRAnimation/CRAnimation-Prefix.pch";
 				INFOPLIST_FILE = "CRAnimation/CRAnimation-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.crossStreet.forDevelopment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

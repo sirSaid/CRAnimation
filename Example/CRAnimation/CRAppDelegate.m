@@ -7,11 +7,20 @@
 //
 
 #import "CRAppDelegate.h"
+#import "CRBaseNavigationViewController.h"
+#import "CRViewController.h"
 
 @implementation CRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    CRViewController *rootVC = [[CRViewController alloc] init];
+    CRBaseNavigationViewController *baseNaviVC = [[CRBaseNavigationViewController alloc] initWithRootViewController:rootVC];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = baseNaviVC;
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }
