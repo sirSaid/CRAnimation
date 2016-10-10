@@ -25,6 +25,8 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
     CGFloat                 cardView_width;
     CGFloat                 cardView_height;
     
+    BOOL                    _initCreate;                //暂时修复layout的bug
+    
     UpdateCardsAnimationFinish_Block _updateCardsAnimationFinish_Block;
 }
 
@@ -51,6 +53,7 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
         _cardScaleRatio             = 0.08;
         _cardFlyMaxDistance         = 40;
         _cardPanEnable              = YES;
+        _initCreate                 = YES;
         
         cardView_width = WIDTH * 0.8;
         cardView_height = HEIGHT * 0.7;
@@ -67,11 +70,10 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
 {
     [super layoutSubviews];
 
-    static BOOL firstCreateUI = YES;
-    if (firstCreateUI == YES) {
+    if (_initCreate == YES) {
         
         [self createUI];
-        firstCreateUI = NO;
+        _initCreate = NO;
     }
 }
 

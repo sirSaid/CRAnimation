@@ -20,7 +20,7 @@
     NSArray             *_timeArray;
     NSArray             *_unitArray;
     
-    CRImageGradientView *_bgImageView;
+    CRImageGradientView   *_bgImageView;
     CRBottomPageView      *_bottomPageView;
     CRCardAnimationView   *_cardAnimationView;
 }

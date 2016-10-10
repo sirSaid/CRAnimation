@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self createUI];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)createUI
