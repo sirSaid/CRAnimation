@@ -7,7 +7,6 @@
 //
 
 #import "CRCardAnimationView.h"
-#import "CRCardViewCell.h"
 
 typedef void (^UpdateCardsAnimationFinish_Block)();
 

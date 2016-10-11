@@ -42,16 +42,17 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     
     if (1) {
         CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
-        demoInfoModel.demoName = @"CRCardAnimationView";
-        demoInfoModel.demoSummary = @"卡片切换动效";
+        demoInfoModel.demoName      = @"CRCardAnimationView";
+        demoInfoModel.demoSummary   = @"卡片切换动效";
+        demoInfoModel.demoVCName    = @"CRCardAnimationViewDemoVC";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
     if (1) {
         CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
-        demoInfoModel.demoName = @"CRImageGradientView";
-        demoInfoModel.demoSummary = @"ImageView过渡切换动效";
-        demoInfoModel.demoVCName = @"CRImageGradientDemoVC";
+        demoInfoModel.demoName      = @"CRImageGradientView";
+        demoInfoModel.demoSummary   = @"ImageView过渡切换动效";
+        demoInfoModel.demoVCName    = @"CRImageGradientDemoVC";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -59,9 +60,9 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     
     if (1) {
         CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
-        demoInfoModel.demoName = @"音乐切换动效";
-        demoInfoModel.demoSummary = @"CRCardAnimationView和CRImageGradientView的组合动效";
-        demoInfoModel.demoVCName = @"CRMusicCardDemoVC";
+        demoInfoModel.demoName      = @"音乐切换动效";
+        demoInfoModel.demoSummary   = @"CRCardAnimationView和CRImageGradientView的组合动效";
+        demoInfoModel.demoVCName    = @"CRMusicCardDemoVC";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoCombination];
     }
 }

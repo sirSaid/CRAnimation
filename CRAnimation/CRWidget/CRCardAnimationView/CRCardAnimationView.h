@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class CRCardViewCell;
+#import "CRCardViewCell.h"
 @class CRCardAnimationView;
 
 typedef enum {
@@ -21,6 +21,8 @@ typedef enum {
 @required
 - (CRCardViewCell *)cardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView AtIndex:(int)index;
 - (NSInteger)numberOfCardsInCardAnimationView:(CRCardAnimationView *)cardAnimationView;
+
+@optional
 - (void)cardViewWillShowWithIndex:(NSInteger)index;
 
 @end
