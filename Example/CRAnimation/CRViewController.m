@@ -56,6 +56,23 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
+    if (1) {
+        CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
+        demoInfoModel.demoName      = @"Gif demo";
+        demoInfoModel.demoSummary   = @"Gif demo";
+        demoInfoModel.demoVCName    = @"GifDemoVC";
+        [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
+    }
+    
+    if (1) {
+        CRDemoInfoModel *demoInfoModel = [CRDemoInfoModel new];
+        demoInfoModel.demoName      = @"LYGif demo";
+        demoInfoModel.demoSummary   = @"LYGif demo";
+        demoInfoModel.demoVCName    = @"CRYFGifDemoViewController";
+        [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
+    }
+    
+
     //  组合动效
     
     if (1) {
