@@ -24,14 +24,14 @@
     
     if (self) {
         
-        cardView_width = self.width;
-        cardView_height = self.height;
-        
-        _animationDuration_Flip = 0.8;
-        
         _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture_Event:)];
         _tapGesture.numberOfTapsRequired = 1;
         [self addGestureRecognizer:_tapGesture];
+        
+        cardView_width          = self.width;
+        cardView_height         = self.height;
+        _animationDuration_Flip = 0.8;
+        self.tapEnable          = NO;
         
         [self createUI];
     }
@@ -118,6 +118,16 @@
 {
     [view setWidth_DonotMoveCenter:cardView_width];
     [view setHeight_DonotMoveCenter:cardView_height];
+}
+
+
+#pragma mark - rewrite
+
+- (void)setTapEnable:(BOOL)tapEnable
+{
+    _tapEnable = tapEnable;
+    
+    _tapGesture.enabled = tapEnable;
 }
 
 @end

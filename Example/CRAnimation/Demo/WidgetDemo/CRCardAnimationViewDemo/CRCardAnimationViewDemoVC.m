@@ -41,7 +41,7 @@
 
 #pragma mark - CardAnimationView delegate
 
-- (CRCardViewCell *)cardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView AtIndex:(int)index
+- (CRCardViewCell *)cardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView Index:(int)index
 {
     CGFloat cardView_width = (1.0 * 540 / 640) * WIDTH;
     CGFloat cardView_height = (1.0 * 811 / 1134) * HEIGHT;
@@ -62,10 +62,16 @@
     return 10;
 }
 
-- (void)cardViewWillShowWithIndex:(NSInteger)index
+- (void)cardViewWillDisappearWithCardViewCell:(CRCardViewCell *)cardViewCell Index:(NSInteger)index
 {
-    NSLog(@"index:%ld", (long)index);
+    NSLog(@"will disappear index:%ld", (long)index);
 }
+
+- (void)cardViewWillShowInTopWithCardViewCell:(CRCardViewCell *)cardViewCell Index:(NSInteger)index
+{
+    NSLog(@"will show index:%ld", (long)index);
+}
+
 
 
 - (void)didReceiveMemoryWarning {

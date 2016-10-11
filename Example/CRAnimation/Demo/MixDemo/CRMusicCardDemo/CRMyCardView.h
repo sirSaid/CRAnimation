@@ -29,7 +29,8 @@ typedef enum {
 
 @property (strong, nonatomic)   CRCardViewBack  *cardViewBack;
 @property (strong, nonatomic)   CRCardViewFront *cardViewFront;
-@property (assign, nonatomic)   CardStatus    cardStatus;
+@property (assign, nonatomic)   CardStatus      cardStatus;
 @property (weak, nonatomic)     id<MyCardViewDelegate> delegate;
+@property (assign, nonatomic)   BOOL            tapEnable;
 
 @end

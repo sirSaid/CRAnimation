@@ -17,9 +17,10 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
     
     NSMutableArray          *_cardDisplayArray;
     NSMutableArray          *_reuseArray;
-    NSInteger               _cards_AllCount;
-    NSInteger               _cardNextIndex_logic;       //card实际索引,willAppear
-    NSInteger               _cardNowIndex_logic;        //card实际索引，当前显示的
+    NSInteger               _cards_AllCount;            //card实际显示总数（和复用数量无关）
+    NSInteger               _cardNextIndex_logic;       //card实际索引,willAppear（和复用数量无关）
+    NSInteger               _cardNowIndex_logic;        //card实际索引，当前显示的（和复用数量无关）
+    NSInteger               _cardLastIndex_logic;       //card实际索引，即将消失的（和复用数量无关）
     
     CGFloat                 cardView_width;
     CGFloat                 cardView_height;
@@ -83,12 +84,13 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
     _cardDisplayArray = [[NSMutableArray alloc] init];
     _cardNextIndex_logic = 0;
     _cardNowIndex_logic = 0;
+    _cardLastIndex_logic = 0;
     
     for (int i = 0 ; i < _cardShowInView_Count + 2; i++) {
         
         CRCardViewCell *cardView;
-        if ([_delegate respondsToSelector:@selector(cardViewInCardAnimationView:AtIndex:)]) {
-            cardView = (CRCardViewCell *)[_delegate cardViewInCardAnimationView:self AtIndex:i];
+        if ([_delegate respondsToSelector:@selector(cardViewInCardAnimationView:Index:)]) {
+            cardView = (CRCardViewCell *)[_delegate cardViewInCardAnimationView:self Index:i];
         }
         _cardNextIndex_logic = _cardShowInView_Count;
         
@@ -152,17 +154,25 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
         [cardView_willDisappear setX:self.width];
     }
     
+    if ([_delegate respondsToSelector:@selector(cardViewWillDisappearWithCardViewCell:Index:)]) {
+        
+        _cardLastIndex_logic = _cardNowIndex_logic - 1;
+        
+        if (!_cardCycleShow && _cardLastIndex_logic >= 0) {
+            [_delegate cardViewWillDisappearWithCardViewCell:cardView_willDisappear Index:_cardLastIndex_logic];
+        }
+        else if (_cardCycleShow) {
+            [_delegate cardViewWillDisappearWithCardViewCell:cardView_willDisappear Index:_cardLastIndex_logic >= 0 ? _cardLastIndex_logic : _cards_AllCount - 1];
+        }
+        
+    }
+    
     //  旧的即将显示的view
     CRCardViewCell *oldWillDisplayView = _cardDisplayArray[cardWillAppear_index];
     oldWillDisplayView.alpha = 0;
-    
-    if ([_delegate respondsToSelector:(@selector(cardViewWillShowWithIndex:))]) {
-        [_delegate cardViewWillShowWithIndex:_cardNowIndex_logic++];
-        
-        if (_cardCycleShow == YES) {
-            if (_cardNowIndex_logic >= _cards_AllCount) {
-                _cardNowIndex_logic = 0;
-            }
+    if (_cardCycleShow == YES) {
+        if (_cardNowIndex_logic >= _cards_AllCount) {
+            _cardNowIndex_logic = 0;
         }
     }
     
@@ -170,9 +180,7 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
     CRCardViewCell *cardView_willAppear;
     if (_cardNextIndex_logic < _cards_AllCount) {
         
-        
-        
-        _cardDisplayArray[cardWillAppear_index] = [self getCardViewInCardAnimationView:self AtIndex:(int)_cardNextIndex_logic++];
+        _cardDisplayArray[cardWillAppear_index] = [self getCardViewInCardAnimationView:self Index:(int)_cardNextIndex_logic++];
         cardView_willAppear = _cardDisplayArray[cardWillAppear_index];
         
         if (_cardCycleShow == YES) {
@@ -238,10 +246,20 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
         //  即将显示的view插入在最后一个可见cardView的下方
         if (j == _cardShowInView_Count - 1) {
             [self insertSubview:cardView_willAppear belowSubview:cardView];
+            
+            
+        }
+        
+        //  即将显示的最前方的cardView
+        if (j == 0) {
+            if ([_delegate respondsToSelector:@selector(cardViewWillShowInTopWithCardViewCell:Index:)]) {
+                [_delegate cardViewWillShowInTopWithCardViewCell:cardView Index:_cardNowIndex_logic];
+            }
         }
 
     }
     
+    _cardNowIndex_logic++;
 }
 
 
@@ -462,12 +480,12 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
 }
 
 #pragma mark - reuse
-- (CRCardViewCell *)getCardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView AtIndex:(int)index
+- (CRCardViewCell *)getCardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView Index:(int)index
 {
     CRCardViewCell *cardView;
     
-    if ([_delegate respondsToSelector:@selector(cardViewInCardAnimationView:AtIndex:)]) {
-        cardView = (CRCardViewCell *)[_delegate cardViewInCardAnimationView:self AtIndex:index];
+    if ([_delegate respondsToSelector:@selector(cardViewInCardAnimationView:Index:)]) {
+        cardView = (CRCardViewCell *)[_delegate cardViewInCardAnimationView:self Index:index];
     }
     
     BOOL needAdd = YES;
@@ -494,11 +512,6 @@ typedef void (^UpdateCardsAnimationFinish_Block)();
     }
     
     return nil;
-}
-
-- (void)cardViewWillShowWithIndex:(NSInteger)index
-{
-
 }
 
 // 判断View是否显示在屏幕上

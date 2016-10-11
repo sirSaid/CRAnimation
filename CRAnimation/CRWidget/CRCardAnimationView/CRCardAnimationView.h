@@ -19,11 +19,15 @@ typedef enum {
 @protocol CardAnimationViewDelegate <NSObject>
 
 @required
-- (CRCardViewCell *)cardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView AtIndex:(int)index;
+- (CRCardViewCell *)cardViewInCardAnimationView:(CRCardAnimationView *)cardAnimationView Index:(int)index;
 - (NSInteger)numberOfCardsInCardAnimationView:(CRCardAnimationView *)cardAnimationView;
 
 @optional
-- (void)cardViewWillShowWithIndex:(NSInteger)index;
+
+//  最前面一个即将消失在屏幕中的cell
+- (void)cardViewWillDisappearWithCardViewCell:(CRCardViewCell *)cardViewCell Index:(NSInteger)index;
+//  最前面一个即将置于图层顶层的cell
+- (void)cardViewWillShowInTopWithCardViewCell:(CRCardViewCell *)cardViewCell Index:(NSInteger)index;
 
 @end
 
