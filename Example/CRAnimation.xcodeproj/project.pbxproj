@@ -19,6 +19,8 @@
 		0920034C1DAD4422008266B8 /* GifDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0920034B1DAD4422008266B8 /* GifDemoVC.m */; };
 		0920034E1DAD45F7008266B8 /* CardFlipGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0920034D1DAD45F7008266B8 /* CardFlipGif.gif */; };
 		092003511DAD478A008266B8 /* CRYFGifDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003501DAD478A008266B8 /* CRYFGifDemoViewController.m */; };
+		092003551DADC3AA008266B8 /* CRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003541DADC3AA008266B8 /* CRViewController.m */; };
+		092003581DADC3F2008266B8 /* CRItemBriefCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092003571DADC3F2008266B8 /* CRItemBriefCollectionViewCell.m */; };
 		0993B46D1DA9C6790012F962 /* CRBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0993B46C1DA9C6790012F962 /* CRBaseViewController.m */; };
 		366BCD0EA1948D6414619360 /* Pods_CRAnimation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02449F62305352FC64D71D38 /* Pods_CRAnimation_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -27,7 +29,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* CRAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* CRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* CRViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -74,6 +75,10 @@
 		0920034D1DAD45F7008266B8 /* CardFlipGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CardFlipGif.gif; sourceTree = "<group>"; };
 		0920034F1DAD478A008266B8 /* CRYFGifDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRYFGifDemoViewController.h; sourceTree = "<group>"; };
 		092003501DAD478A008266B8 /* CRYFGifDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRYFGifDemoViewController.m; sourceTree = "<group>"; };
+		092003531DADC3AA008266B8 /* CRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRViewController.h; sourceTree = "<group>"; };
+		092003541DADC3AA008266B8 /* CRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRViewController.m; sourceTree = "<group>"; };
+		092003561DADC3F2008266B8 /* CRItemBriefCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRItemBriefCollectionViewCell.h; sourceTree = "<group>"; };
+		092003571DADC3F2008266B8 /* CRItemBriefCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRItemBriefCollectionViewCell.m; sourceTree = "<group>"; };
 		0993B46B1DA9C6790012F962 /* CRBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRBaseViewController.h; sourceTree = "<group>"; };
 		0993B46C1DA9C6790012F962 /* CRBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRBaseViewController.m; sourceTree = "<group>"; };
 		0EE5779AF28D42163CC3E896 /* Pods-CRAnimation_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRAnimation_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CRAnimation_Example/Pods-CRAnimation_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,8 +94,6 @@
 		6003F59B195388D20070C39A /* CRAnimation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CRAnimation-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* CRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* CRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* CRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* CRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* CRAnimation_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRAnimation_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -214,6 +217,17 @@
 			path = GifDemo;
 			sourceTree = "<group>";
 		};
+		092003521DADC3AA008266B8 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				092003531DADC3AA008266B8 /* CRViewController.h */,
+				092003541DADC3AA008266B8 /* CRViewController.m */,
+				092003561DADC3F2008266B8 /* CRItemBriefCollectionViewCell.h */,
+				092003571DADC3F2008266B8 /* CRItemBriefCollectionViewCell.m */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
 		0993B46A1DA9C6650012F962 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,8 +278,7 @@
 			children = (
 				6003F59C195388D20070C39A /* CRAppDelegate.h */,
 				6003F59D195388D20070C39A /* CRAppDelegate.m */,
-				6003F5A5195388D20070C39A /* CRViewController.h */,
-				6003F5A6195388D20070C39A /* CRViewController.m */,
+				092003521DADC3AA008266B8 /* MainVC */,
 				0920032A1DAAA197008266B8 /* Model */,
 				0993B46A1DA9C6650012F962 /* Base */,
 				0920032E1DAAA20B008266B8 /* Demo */,
@@ -531,7 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* CRAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* CRViewController.m in Sources */,
+				092003551DADC3AA008266B8 /* CRViewController.m in Sources */,
 				0920034C1DAD4422008266B8 /* GifDemoVC.m in Sources */,
 				092003441DAAA20B008266B8 /* CRMyCardView.m in Sources */,
 				0920032D1DAAA1A6008266B8 /* CRDemoInfoModel.m in Sources */,
@@ -543,6 +556,7 @@
 				092003401DAAA20B008266B8 /* CRBottomPageView.m in Sources */,
 				092003431DAAA20B008266B8 /* CRMusicCardDemoVC.m in Sources */,
 				092003451DAAA20B008266B8 /* CRImageGradientDemoVC.m in Sources */,
+				092003581DADC3F2008266B8 /* CRItemBriefCollectionViewCell.m in Sources */,
 				092003411DAAA20B008266B8 /* CRCardViewBack.m in Sources */,
 				092003511DAD478A008266B8 /* CRYFGifDemoViewController.m in Sources */,
 			);

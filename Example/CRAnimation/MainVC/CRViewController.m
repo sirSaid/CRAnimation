@@ -8,6 +8,7 @@
 
 #import "CRViewController.h"
 #import "CRDemoInfoModel.h"
+#import "CRItemBriefCollectionViewCell.h"
 
 static NSString *collectionViewCellID   = @"collectionViewCellID";
 
@@ -49,6 +50,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         demoInfoModel.demoName      = @"CRCardAnimationView";
         demoInfoModel.demoSummary   = @"卡片切换动效";
         demoInfoModel.demoVCName    = @"CRCardAnimationViewDemoVC";
+        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -57,6 +59,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         demoInfoModel.demoName      = @"CRImageGradientView";
         demoInfoModel.demoSummary   = @"ImageView过渡切换动效";
         demoInfoModel.demoVCName    = @"CRImageGradientDemoVC";
+        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -65,6 +68,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         demoInfoModel.demoName      = @"Gif demo";
         demoInfoModel.demoSummary   = @"Gif demo";
         demoInfoModel.demoVCName    = @"GifDemoVC";
+        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -73,6 +77,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         demoInfoModel.demoName      = @"LYGif demo";
         demoInfoModel.demoSummary   = @"LYGif demo";
         demoInfoModel.demoVCName    = @"CRYFGifDemoViewController";
+        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -84,6 +89,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         demoInfoModel.demoName      = @"音乐切换动效";
         demoInfoModel.demoSummary   = @"CRCardAnimationView和CRImageGradientView的组合动效";
         demoInfoModel.demoVCName    = @"CRMusicCardDemoVC";
+        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoCombination];
     }
 }
@@ -130,7 +136,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     _mainCollectionView.delegate = self;
     _mainCollectionView.dataSource = self;
     [self.view addSubview:_mainCollectionView];
-    [_mainCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:collectionViewCellID];
+    [_mainCollectionView registerClass:[CRItemBriefCollectionViewCell class] forCellWithReuseIdentifier:collectionViewCellID];
 }
 
 
@@ -148,11 +154,23 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellID forIndexPath:indexPath];
+    CRItemBriefCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellID forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor purpleColor];
     
+    CRDemoInfoModel *demoInfoModel = _dataArrayDemoModel[indexPath.section][indexPath.row];
+    if (demoInfoModel.demoVCName) {
+        [cell loadDemoInfoModel:demoInfoModel];
+    }
+    
     return cell;
+}
+
+#pragma mark - collectionView delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -160,7 +178,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat cellWidth = WIDTH / 2.0 - 10;
-    CGFloat cellHeight = 100;
+    CGFloat cellHeight = 1.0 * HEIGHT6 / WIDTH6 * cellWidth;
     return (CGSize){cellWidth, cellHeight};
 }
 
@@ -177,7 +195,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 20.f;
+    return 10.f;
 }
 
 

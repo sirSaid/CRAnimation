@@ -13,5 +13,6 @@
 @property (strong, nonatomic) NSString  *demoName;
 @property (strong, nonatomic) NSString  *demoSummary;
 @property (strong, nonatomic) NSString  *demoVCName;
+@property (strong, nonatomic) NSString  *demoGifName;
 
 @end
