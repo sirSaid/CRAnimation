@@ -9,14 +9,18 @@
 #import "CRViewController.h"
 #import "CRDemoInfoModel.h"
 
+static NSString *collectionViewCellID   = @"collectionViewCellID";
+
 static NSString *__kCRDemoStorage       = @"动效仓库";
 static NSString *__kCRDemoCombination   = @"组合动效";
 
-@interface CRViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CRViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) NSMutableArray  *dataArrayTitle;
 @property (strong, nonatomic) NSMutableArray  *dataArrayDemoModel;
 @property (strong, nonatomic) UITableView     *mainTableView;
+
+@property (strong, nonatomic) UICollectionView  *mainCollectionView;
 
 @end
 
@@ -114,10 +118,66 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 - (void)createUI
 {
-    _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
-    _mainTableView.delegate = self;
-    _mainTableView.dataSource = self;
-    [self.view addSubview:_mainTableView];
+//    _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
+//    _mainTableView.delegate = self;
+//    _mainTableView.dataSource = self;
+//    [self.view addSubview:_mainTableView];
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    
+    _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:layout];
+    _mainCollectionView.backgroundColor = [UIColor orangeColor];
+    _mainCollectionView.delegate = self;
+    _mainCollectionView.dataSource = self;
+    [self.view addSubview:_mainCollectionView];
+    [_mainCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:collectionViewCellID];
+}
+
+
+#pragma mark - collectionView dataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return [_dataArrayDemoModel count];
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [_dataArrayDemoModel[section] count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectionViewCellID forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor purpleColor];
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat cellWidth = WIDTH / 2.0 - 10;
+    CGFloat cellHeight = 100;
+    return (CGSize){cellWidth, cellHeight};
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 5.f;
+}
+
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 20.f;
 }
 
 
