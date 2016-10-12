@@ -9,17 +9,18 @@
 #import "CRViewController.h"
 #import "CRDemoInfoModel.h"
 #import "CRItemBriefCollectionViewCell.h"
+#import "CRItemBriefSetcionHeaderView.h"
 
-static NSString *collectionViewCellID   = @"collectionViewCellID";
+static NSString *collectionViewCellID           = @"collectionViewCellID";
+static NSString *collectionViewReusableViewID   = @"collectionViewReusableViewID";
 
 static NSString *__kCRDemoStorage       = @"动效仓库";
 static NSString *__kCRDemoCombination   = @"组合动效";
 
-@interface CRViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface CRViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) NSMutableArray  *dataArrayTitle;
 @property (strong, nonatomic) NSMutableArray  *dataArrayDemoModel;
-@property (strong, nonatomic) UITableView     *mainTableView;
 
 @property (strong, nonatomic) UICollectionView  *mainCollectionView;
 
@@ -124,11 +125,6 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 - (void)createUI
 {
-//    _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) style:UITableViewStyleGrouped];
-//    _mainTableView.delegate = self;
-//    _mainTableView.dataSource = self;
-//    [self.view addSubview:_mainTableView];
-    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
     _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:layout];
@@ -137,6 +133,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     _mainCollectionView.dataSource = self;
     [self.view addSubview:_mainCollectionView];
     [_mainCollectionView registerClass:[CRItemBriefCollectionViewCell class] forCellWithReuseIdentifier:collectionViewCellID];
+    [_mainCollectionView registerClass:[CRItemBriefSetcionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:collectionViewReusableViewID];
 }
 
 
@@ -164,6 +161,36 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     }
     
     return cell;
+}
+
+// 和UITableView类似，UICollectionView也可设置段头段尾
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if([kind isEqualToString:UICollectionElementKindSectionHeader])
+    {
+        CRItemBriefSetcionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:collectionViewReusableViewID forIndexPath:indexPath];
+        if(headerView == nil)
+        {
+            headerView = [[CRItemBriefSetcionHeaderView alloc] init];
+        }
+        headerView.backgroundColor = [UIColor grayColor];
+        
+        return headerView;
+    }
+    else if([kind isEqualToString:UICollectionElementKindSectionFooter])
+    {
+//        UICollectionReusableView *footerView = [_collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:footerId forIndexPath:indexPath];
+//        if(footerView == nil)
+//        {
+//            footerView = [[UICollectionReusableView alloc] init];
+//        }
+//        footerView.backgroundColor = [UIColor lightGrayColor];
+//        
+//        return footerView;
+    }
+    
+    return nil;
 }
 
 #pragma mark - collectionView delegate
@@ -205,41 +232,6 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 
 #pragma mark - tableView delegate
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [_dataArrayDemoModel count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [_dataArrayDemoModel[section] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellID = @"cellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-    }
-    
-    CRDemoInfoModel *demoInfoModel = _dataArrayDemoModel[indexPath.section][indexPath.row];
-    cell.textLabel.text = demoInfoModel.demoName;
-    cell.detailTextLabel.text = demoInfoModel.demoSummary;
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CRDemoInfoModel *demoInfoModel = _dataArrayDemoModel[indexPath.section][indexPath.row];
-    
-    if (demoInfoModel.demoVCName) {
-        CRBaseViewController *destinationVC = [[NSClassFromString(demoInfoModel.demoVCName) alloc] init];
-        [self.navigationController pushViewController:destinationVC animated:YES];
-    }
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
