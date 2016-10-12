@@ -68,7 +68,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
         demoInfoModel.demoName      = @"Gif demo";
         demoInfoModel.demoSummary   = @"Gif demo";
         demoInfoModel.demoVCName    = @"GifDemoVC";
-        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
+//        demoInfoModel.demoGifName   = @"CardFlipGif.gif";
         [self addDemoModel:demoInfoModel withGroupName:__kCRDemoStorage];
     }
     
@@ -132,7 +132,7 @@ static NSString *__kCRDemoCombination   = @"组合动效";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
     _mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, WIDTH, HEIGHT) collectionViewLayout:layout];
-    _mainCollectionView.backgroundColor = [UIColor orangeColor];
+    _mainCollectionView.backgroundColor = color_Master;
     _mainCollectionView.delegate = self;
     _mainCollectionView.dataSource = self;
     [self.view addSubview:_mainCollectionView];
@@ -170,7 +170,12 @@ static NSString *__kCRDemoCombination   = @"组合动效";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    CRDemoInfoModel *demoInfoModel = _dataArrayDemoModel[indexPath.section][indexPath.row];
+    
+    if (demoInfoModel.demoVCName) {
+        CRBaseViewController *destinationVC = [[NSClassFromString(demoInfoModel.demoVCName) alloc] init];
+        [self.navigationController pushViewController:destinationVC animated:YES];
+    }
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
